@@ -1,0 +1,36 @@
+{
+  "name": "cross-load",
+  "version": "0.0.1",
+  "author": "Morgan 'ARR!' Allen",
+  "description": "Super simple 'p2p' file transfer",
+  "contributors": [
+    {
+      "name": "Morgan 'ARR!' Allen",
+      "email": "morganrallen@gmail.com"
+    } 
+  ],
+  "bin": {
+    "server": "node server"
+  },
+  "scripts": {
+    "test": "vows --spec --isolate"
+  },
+  "main": "server",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "formidable",
+    "server"
+  ],
+  "dependencies" : {
+    "ejs": "0.8.x",
+    "formidable": "1.0.x"
+  },
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.6"
+  }
+}
+

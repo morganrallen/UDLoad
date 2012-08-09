@@ -1,0 +1,8 @@
+Download link http://localhost:8123/retrieve/<span id="filename"></span>?guid=<%= guid %>
+<script>var spanFilename = document.getElementById("filename");</script>
+<form action="/upload?guid=<%=guid%>" enctype="multipart/form-data" method="post">
+	<input type="text" name="title"><br>
+	<input type="file" name="upload" multiple="multiple" onchange="javascript:spanFilename.innerText = this.value.split('\\').pop();"><br>
+	<input type="submit" value="Upload">
+</form>
+
