@@ -51,7 +51,7 @@ var server = http.createServer(function(req, res) {
 				// one chunk comes throught regardless of req.pause, save it, then delete it
 				if(fileRequests[g].buffer)
 					fileRequests[g].buffer.push(chunk);
-				console.log("Bytes buffered: %s", form.bytesReceived);
+				console.log("Bytes %s: %s", fileRequests[g].buffer ? "Buffered" : "Transfered", form.bytesReceived);
 			});
 
 			form.on("end", function() {

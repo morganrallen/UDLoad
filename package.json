@@ -1,8 +1,8 @@
 {
-  "name": "cross-load",
+  "name": "UDLoad",
   "version": "0.0.1",
   "author": "Morgan 'ARR!' Allen",
-  "description": "Super simple 'p2p' file transfer",
+  "description": "Super simple (not)'p2p' file transfer",
   "contributors": [
     {
       "name": "Morgan 'ARR!' Allen",
