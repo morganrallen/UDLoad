@@ -10,6 +10,7 @@ var fileRequests = {},
 var server = http.createServer(function(req, res) {
 	var u = url.parse(req.url, true),
 		g = u.query.guid;
+
 	if(req.url.indexOf("/retrieve") > -1) {
 		var fileReq = fileRequests[g];
 		if(!fileReq) {
@@ -26,7 +27,7 @@ var server = http.createServer(function(req, res) {
 		part.pipe(res);
 		part.on("end", function() {
 			delete fileRequests[g];
-			res.end("done!");
+			res.end();
 		});
 		fileReq.req.resume();
 	} else if(req.url.indexOf("/upload") > -1) {
@@ -49,6 +50,7 @@ var server = http.createServer(function(req, res) {
 
 			part.on("data", function(chunk) {
 				// one chunk comes throught regardless of req.pause, save it, then delete it
+				// it would be nice to be able to do part.pause and have it stop at the next (this) header
 				if(fileRequests[g].buffer)
 					fileRequests[g].buffer.push(chunk);
 				console.log("Bytes %s: %s", fileRequests[g].buffer ? "Buffered" : "Transfered", form.bytesReceived);
